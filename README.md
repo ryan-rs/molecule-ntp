@@ -1,12 +1,21 @@
 Role Name
 =========
 
-A brief description of the role goes here.
+This is a simple test repo using the [molecule framework](https://molecule.readthedocs.io/en/latest/)
+for deploying system state via [ansible](https://www.ansible.com/)
+and validating that state using
+[infratest](https://testinfra.readthedocs.io/en/latest/).
 
 Requirements
 ------------
 
-Any pre-requisites that may not be covered by Ansible itself or the role should be mentioned here. For instance, if the role uses the EC2 module, it may be a good idea to mention in this section that the boto package is required.
+The following packages should be installed via pip in order to run molecule.
+```
+pip install molecule testinfra python-vagrant ansible docker-py
+```
+
+This branch uses docker as its driver, so docker must be installed on the
+system running molecule.
 
 Role Variables
 --------------
@@ -30,7 +39,7 @@ Including an example of how to use your role (for instance, with variables passe
 License
 -------
 
-BSD
+Apache
 
 Author Information
 ------------------
