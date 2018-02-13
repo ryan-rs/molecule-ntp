@@ -1,5 +1,5 @@
 ---
-# defaults file for ansible-role-ntp
+# defaults file for molecule-ntp
 ntp_timezone: America/Los_Angeles
 ntp_servers:
     - 0.us.pool.ntp.org

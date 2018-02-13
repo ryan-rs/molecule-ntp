@@ -10,8 +10,21 @@ Requirements
 ------------
 
 The following packages should be installed via pip in order to run molecule.
+In order to isolate the dependencies, it is recommended that you use a python
+virtualenv. However, such a virtualenv _must_ be located outside of the
+directory structure of this repo or the ansible linter will attempt to verify
+the dynamic yaml inside of core ansible and fail spectacularly because the
+entire virtualenv directory will be in scope for lint inspection.
+
+Here are the basic steps to get started with this repo:
 ```
-pip install molecule testinfra python-vagrant ansible docker-py
+cd /path/where/the/repo/will/be/cloned/to
+virtualenv --python python2 venv-molecule
+. venv-molecule/bin/activate
+pip install molecule testinfra ansible docker-py
+git clone git@github.com:johnduarte/molecule-ntp
+cd molecule-ntp
+molecule test
 ```
 
 This branch uses docker as its driver, so docker must be installed on the
@@ -34,7 +47,7 @@ Including an example of how to use your role (for instance, with variables passe
 
     - hosts: servers
       roles:
-         - { role: ansible-role-ntp, x: 42 }
+         - { role: molecule-ntp, x: 42 }
 
 License
 -------
